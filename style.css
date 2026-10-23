@@ -8,6 +8,20 @@
     scroll-behavior: smooth;
     list-style: none;
 }
+
+/* Cream background with a subtle dotted texture */
+body {
+    background-color: rgb(244, 237, 228);
+    color: rgb(41, 37, 34);
+
+    background-image: radial-gradient(
+        rgba(110, 38, 56, 0.12) 0.7px,
+        transparent 0.7px
+    );
+
+    background-size: 7px 7px;
+}
+
 /* Navigation bar at the top of the page */
 header {
     position: fixed;
@@ -133,7 +147,7 @@ section {
 /* Profile image */
 .about img {
     width: 30vw;
-    border-radius: 30%;
+    border-radius: 40%;
 }
 
 /* Container for your introduction text */
@@ -209,3 +223,107 @@ section {
 .socials i:hover {
     transform: scale(1.1);
 }
+
+/* Section heading: "My Projects" */
+
+.section-title {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    color: rgb(41, 37, 34); /* Espresso brown */
+}
+.projects-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem ;
+}
+
+/* Images inside the projects section */
+.projects img {
+    width: 200px;
+    height: auto;
+    border-radius: 3rem;
+}
+
+/* Grid layout: two columns of project cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Individual project cards */
+.grid-card {
+    border: 2px solid rgb(110, 38, 56); /* Wine-red border */
+    border-radius: 3rem;
+    padding: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+/* Hover effect for project cards */
+.grid-card:hover {
+    transform: scale(1.02);
+    background-color: rgb(110, 38, 56); /* Wine red */
+    color: rgb(244, 237, 228); /* Cream text */
+}
+
+/* Icons inside project cards */
+.grid-card i {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Category labels inside project cards */
+.grid-card span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(110, 38, 56);
+}
+
+/* Change category label colour when hovering */
+.grid-card:hover span {
+    color: rgb(193, 139, 130); /* Dusty rose */
+}
+
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+    background-color: rgb(244, 237, 228);
+}
+
+/* Vertical scrollbar with gradient */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        to bottom,
+        rgb(110, 38, 56),
+        rgb(193, 139, 130)
+    );
+    border-radius: 10px;
+}
+
+/* Gradient when hovering */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        to bottom,
+        rgb(193, 139, 130),
+        rgb(110, 38, 56)
+    );
+}
+
+}
+
