@@ -94,7 +94,6 @@ li a:hover::before {
 }
 /* Reverse the gradient colours when hovering */
 .visit-btn:hover {
-    .visit-btn:hover {
     background: rgb(193, 139, 130); /* Dusty rose */
     color: rgb(41, 37, 34); /* Espresso text */
     transform: scale(1.05);
@@ -105,4 +104,108 @@ li a:hover::before {
 #menu-icon {
     font-size: 2rem;
     display: none;
+}
+
+
+/* General styling for every section */
+section {
+    min-height: 100vh; /* At least the full height of the screen */
+    padding: 8rem 12%;
+    width: 100%;
+    position: relative;
+}
+
+/* About section layout */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container holding the image and information */
+.about .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem; /* Space between image and text */
+}
+
+/* Profile image */
+.about img {
+    width: 30vw;
+    border-radius: 30%;
+}
+
+/* Container for your introduction text */
+.info-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Small heading */
+.info-box h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* Gradient text using your wine and dusty rose colours */
+.info-box span {
+    background: linear-gradient(
+        to right,
+        rgb(110, 38, 56),
+        rgb(193, 139, 130)
+    );
+
+    background-clip: text; /* Clip the background to the text */
+    -webkit-background-clip: text; /* Support for Chrome and Safari */
+    color: transparent; /* Make the text transparent to reveal the gradient */
+    font-size: 2rem;
+}
+
+/* Group of buttons */
+.btn-group {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Individual buttons */
+.btn {
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid rgb(110, 38, 56);
+    cursor: pointer;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: 0.2s ease-in-out;
+
+    background-color: rgb(244, 237, 228);
+    color: rgb(110, 38, 56);
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: rgb(110, 38, 56);
+    color: rgb(244, 237, 228);
+}
+
+/* Social media icons container */
+.socials {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Individual social media icons */
+.socials i {
+    font-size: 2.5rem; /* No space between 2.5 and rem */
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+/* Slightly enlarge icons on hover */
+.socials i:hover {
+    transform: scale(1.1);
 }
