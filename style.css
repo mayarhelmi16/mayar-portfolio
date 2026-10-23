@@ -1,0 +1,127 @@
+
+/* Apply basic styling to every element on the page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+/* Navigation bar at the top of the page */
+header {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem; /* Space between logo, links and button */
+
+    background-color: blueviolet;
+    backdrop-filter: blur(8px);
+    color: azure;
+
+    padding: 0.8rem 2rem; /* More space inside the box */
+    min-width: max-content; /* Prevent the navigation bar from shrinking */
+    border-radius: 3rem;
+    z-index: 1000;
+}
+
+/* Your name / logo */
+.logo {
+    color: white;
+    font-size: 1.5rem; /* Increased from 1.3rem */
+    font-weight: 600;
+
+    white-space: nowrap;
+    padding: 0.3rem 0.5rem; /* Gives your name more breathing room */
+
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation links arranged horizontally */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Individual navigation links */
+li a {
+    position: relative;
+    color: white;
+    font-weight: 300;
+}
+
+/* Gradient underline hidden until you hover over a link */
+li a::before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: -6px;
+
+    border-radius: 1rem;
+    transition: width 0.3s ease-in-out;
+
+    /* Correct gradient syntax: red to blue */
+    background: linear-gradient(to right, red, rgb(0, 157, 255));
+}
+
+/* Expand the underline when hovering */
+li a:hover::before {
+    width: 100%;
+}
+
+/* Visit GitHub button */
+.visit-btn {
+    display: inline-block;
+
+    padding: 0.8rem 1.8rem;
+    border-radius: 3rem;
+    border: none;
+
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap;
+
+    /* Red-to-blue gradient background */
+    background: linear-gradient(
+        135deg,
+        rgb(255, 0, 0),
+        rgb(0, 157, 255)
+    );
+
+    /* Smooth hover animation */
+    transition: transform 0.3s ease-in-out,
+                background 0.3s ease-in-out;
+}
+
+/* Reverse the gradient colours when hovering */
+.visit-btn:hover {
+    background: linear-gradient(
+        135deg,
+        rgb(0, 157, 255),
+        rgb(255, 0, 0)
+    );
+
+    transform: scale(1.05);
+}
+
+/* Mobile menu icon (hidden on larger screens) */
+#menu-icon {
+    font-size: 2rem;
+    display: none;
+}
