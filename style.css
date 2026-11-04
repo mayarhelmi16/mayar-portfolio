@@ -224,6 +224,15 @@ section {
     transform: scale(1.1);
 }
 
+.about-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgb(70, 60, 55);
+    max-width: 550px;
+    margin-top: 1.5rem;
+}
+
+
 /* Section heading: "My Projects" */
 
 .section-title {
@@ -295,6 +304,27 @@ section {
     color: rgb(193, 139, 130); /* Dusty rose */
 }
 
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: rgb(110, 38, 56);
+    color: rgb(244, 237, 228);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: rgb(193, 139, 130);
+    transform: translateY(-5px);
+}
 /* TYPING ANIMATION */
 
 #typing-text::after {
@@ -520,31 +550,36 @@ section {
     transform: scale(1.05);
 }
 
-/* Footer Navigation */
-.contact footer {
+footer {
     width: 100%;
-    margin-top: 60px;
+    padding: 2rem 8%;
+    margin-top: 4rem;
+    background-color: rgb(110, 38, 56);
+    color: rgb(244, 237, 228);
 }
 
-.contact footer ul {
+.footer-container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 35px;
-    list-style: none;
-    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-.contact footer ul li a {
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: rgb(244, 237, 228);
     text-decoration: none;
-    color: rgb(110, 38, 56);
-    font-weight: 500;
     transition: 0.3s ease;
 }
 
-.contact footer ul li a:hover {
+.footer-links a:hover {
     color: rgb(193, 139, 130);
 }
+
 
 /* CLICKABLE GALLERY IMAGES */
 
@@ -729,13 +764,20 @@ section {
     .input i {
         display: none;
     }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
 
-    /* Footer */
-    footer ul {
-        flex-wrap: wrap;
-        justify-content: center;
+    .footer-links {
+        flex-direction: column;
         gap: 1rem;
     }
+}
+}
+.nav-links a.active {
+    color: rgb(193, 139, 130);
+    font-weight: 700;
 }
 
 .reveal {

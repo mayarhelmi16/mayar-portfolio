@@ -25,7 +25,6 @@ revealElements.forEach(element => {
     revealObserver.observe(element);
 });
 
-// LIGHTBOX
 
 const galleryImages = document.querySelectorAll('.gallery-image');
 const lightbox = document.querySelector('#lightbox');
@@ -40,27 +39,21 @@ galleryImages.forEach(image => {
     });
 });
 
-// Close using the X button
 closeLightbox.addEventListener('click', () => {
     lightbox.classList.remove('active');
 });
 
-// Close by clicking outside the image
 lightbox.addEventListener('click', (event) => {
     if (event.target === lightbox) {
         lightbox.classList.remove('active');
     }
 });
 
-// Close using Escape key
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
         lightbox.classList.remove('active');
     }
 });
-
-
-// TYPING ANIMATION
 
 const typingText = document.querySelector("#typing-text");
 
@@ -80,3 +73,44 @@ function typeEffect() {
 if (typingText) {
     typeEffect();
 }
+const backToTop = document.querySelector("#back-to-top");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        backToTop.style.display = "block";
+    } else {
+        backToTop.style.display = "none";
+    }
+});
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+
+const sections = document.querySelectorAll("section");
+const navItems = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (window.scrollY >= sectionTop - 200) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navItems.forEach(link => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+        }
+    });
+});
