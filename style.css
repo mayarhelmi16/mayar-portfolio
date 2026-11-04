@@ -66,7 +66,8 @@ li a {
     font-weight: 300;
 }
 /* Gradient underline hidden until you hover over a link */
-li a::before {
+/* Navigation underline */
+.nav-links a::before {
     position: absolute;
     content: '';
     width: 0;
@@ -75,16 +76,23 @@ li a::before {
     bottom: -6px;
     border-radius: 1rem;
     transition: width 0.3s ease-in-out;
-    /* Correct gradient syntax: red to blue */
     background: linear-gradient(
-    to right,
-    rgb(110, 38, 56),
-    rgb(193, 139, 130)
-);
+        to right,
+        rgb(193, 139, 130),
+        rgb(244, 237, 228)
+    );
 }
-/* Expand the underline when hovering */
-li a:hover::before {
+
+/* Hover and active underline */
+.nav-links a:hover::before,
+.nav-links a.active::before {
     width: 100%;
+}
+
+/* Active navigation text */
+.nav-links a.active {
+    color: rgb(193, 139, 130);
+    font-weight: 700;
 }
 /* Visit GitHub button */
 .visit-btn {
@@ -219,7 +227,7 @@ section {
     transition: 0.2s ease-in-out;
 }
 
-/* Slightly enlarge icons on hover */
+/*  enlarge icons on hover */
 .socials i:hover {
     transform: scale(1.1);
 }
@@ -240,7 +248,7 @@ section {
     font-size: 4rem;
     font-weight: 600;
     margin-bottom: 3rem;
-    color: rgb(41, 37, 34); /* Espresso brown */
+    color: rgb(41, 37, 34);
 }
 .projects-info{
     display: flex;
@@ -775,11 +783,6 @@ footer {
     }
 }
 }
-.nav-links a.active {
-    color: rgb(193, 139, 130);
-    font-weight: 700;
-}
-
 .reveal {
     opacity: 0;
     transform: translateY(40px);
