@@ -295,6 +295,19 @@ section {
     color: rgb(193, 139, 130); /* Dusty rose */
 }
 
+/* TYPING ANIMATION */
+
+#typing-text::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
 /* PROJECT GALLERY */
 
 .project-gallery {

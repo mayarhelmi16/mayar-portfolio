@@ -59,3 +59,24 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+
+// TYPING ANIMATION
+
+const typingText = document.querySelector("#typing-text");
+
+const text = "Multimedia Computing Student";
+
+let characterIndex = 0;
+
+function typeEffect() {
+    if (characterIndex < text.length) {
+        typingText.textContent += text.charAt(characterIndex);
+        characterIndex++;
+
+        setTimeout(typeEffect, 100);
+    }
+}
+
+if (typingText) {
+    typeEffect();
+}
